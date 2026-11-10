@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>首爾四日行程 2026/11/26–11/29</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f5f4;--card:#fff;--ink:#17211c;--mute:#5e6b64;--line:#d9dfdc;--g:#00a84d;--gd:#067a3b;--food:#e4572e;--spot:#2f6fdb;--move:#8a94a0;--hotel:#7a4fd1;--chip:#e9f6ee;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#101613;--card:#18211c;--ink:#e8efeb;--mute:#9aa8a0;--line:#2b3832;--g:#2ed47a;--gd:#2ed47a;--chip:#173a28;--food:#ff7a52;--spot:#6c9cff;--hotel:#a98af0}}
+:root[data-theme="dark"]{--bg:#101613;--card:#18211c;--ink:#e8efeb;--mute:#9aa8a0;--line:#2b3832;--g:#2ed47a;--gd:#2ed47a;--chip:#173a28;--food:#ff7a52;--spot:#6c9cff;--hotel:#a98af0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 15px/1.7 "Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+header{background:var(--g);color:#fff;padding:36px 20px 28px}
+.wrap{max-width:720px;margin:0 auto}
+h1{margin:0;font-weight:900;font-size:clamp(34px,9vw,56px);line-height:1.1;letter-spacing:.02em}
+header p{margin:10px 0 0;opacity:.92}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.facts span{background:rgba(255,255,255,.18);border-radius:99px;padding:3px 12px;font-size:13px}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+nav .wrap{display:flex;gap:6px;padding:10px 14px;overflow-x:auto}
+nav button{flex:1 0 auto;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:6px 14px;font:inherit;font-size:13px;line-height:1.35;cursor:pointer;text-align:center}
+nav button b{display:block;font-size:16px}
+nav button[aria-selected="true"]{background:var(--g);border-color:var(--g);color:#fff}
+nav button:focus-visible{outline:3px solid var(--spot);outline-offset:2px}
+main{padding:22px 16px 60px}
+h2{margin:0 0 4px;font-size:22px}
+.sub{color:var(--mute);margin:0 0 20px;font-size:14px}
+ol{list-style:none;margin:0;padding:0;position:relative}
+ol::before{content:"";position:absolute;left:7px;top:10px;bottom:10px;width:4px;background:var(--g);border-radius:2px;opacity:.35}
+li{position:relative;padding-left:34px;margin-bottom:14px}
+li::before{content:"";position:absolute;left:0;top:14px;width:18px;height:18px;border-radius:50%;background:var(--card);border:4px solid var(--c,var(--move))}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 15px}
+.time{font-size:12.5px;color:var(--mute);font-variant-numeric:tabular-nums}
+.t{font-weight:700;font-size:16.5px;margin:0}
+.tr{margin:6px 0 0;font-size:13.5px;color:var(--gd);background:var(--chip);border-radius:8px;padding:3px 9px;display:inline-block}
+.note{margin:7px 0 0;font-size:13.5px;color:var(--mute);white-space:pre-line}
+.tag{font-size:11.5px;color:var(--c);font-weight:700;margin-left:6px}
+footer{text-align:center;color:var(--mute);font-size:12.5px;padding-bottom:30px}
+@media (prefers-reduced-motion:no-preference){main section{animation:in .25s ease}@keyframes in{from{opacity:0}to{opacity:1}}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<h1>首爾四日行程</h1>
+<p>2026/11/26（四）– 11/29（日）　弘大住宿，地鐵 2 號線走透透</p>
+<div class="facts"><span>CI 160 · 07:50 起飛</span><span>CI 163 · 20:15 返台</span><span>住：樂天 L7 弘大</span></div>
+</div></header>
+<nav><div class="wrap" role="tablist" id="tabs"></div></nav>
+<main><div class="wrap" id="view"></div></main>
+<footer>平安出門，吃飽回家</footer>
+<script>
+var K={food:["#e4572e","吃"],spot:["#2f6fdb","逛"],move:["#8a94a0","移動"],hotel:["#7a4fd1","住"]};
+var D=[
+{d:"11/26",w:"四",h:"出發、換錢、東大門",s:"早起飛韓國，下午逛市場和 DDP",i:[
+["0430–0530","家 → 桃園機場","Klook 機場接送，4:30 出發","訂單編號：KFV903954","move"],
+["0750–1120","桃園機場 → 仁川機場","CI 160　TPE 第 1 航廈 → ICN 第 2 航廈","設定 eSIM","move"],
+["1200–1300","換錢：K-Exchange 弘大店 / Red Road 店","AREX 機場快線：第 2 航廈 → 弘大（約 51 分鐘，4,650 韓元/人）","弘大 7 號出口有 24 小時換錢機\n位置：弘大入口站 9 號出口步行約 5 分鐘（K-Exchange 弘大店）\n或 7 號出口步行 1 分鐘（Red Road 店）\n營業時間約 10:00–21:00/22:00，出示優惠券與護照可享優惠","spot"],
+["1300–1330","樂天 L7 弘大飯店（L7 HONGDAE）","地鐵 2 號線、AREX 弘大入口站 1 號出口旁，出站步行約 2 分鐘，設有電梯/手扶梯","訂單編號：1782068406、1782071169\n141 Yanghwa-ro, Mapo-gu, Seoul, 南韓\n首爾特別市麻浦區楊花路 141 號","hotel"],
+["1330–1600","廣藏市場","（綠）弘益大學站 → 乙支路四街站（25 分鐘）","","spot"],
+["1600–1800","東大門逛街・東大門設計廣場 DDP","步行 10 分鐘","","spot"],
+["晚餐","東大門附近找烤肉","","","food"],
+["回飯店","L7 HONGDAE","（綠）東大門歷史文化公園站 → 弘益大學站（33 分鐘）","","hotel"],
+["宵夜","獵奇辣炒年糕 弘大店","步行 10 分鐘","","food"]]},
+{d:"11/27",w:"五",h:"望遠、聖水洞、樂天世界塔",s:"文青街區一整天，晚上看夜景",i:[
+["0900–1100","望遠市場","Uber（10 分鐘）","早餐在這邊吃","food"],
+["1200–1300","聖水洞午餐","","待補","food"],
+["1300–1600","聖水洞","（棕）望遠站 → 合井站（1 站）\n（綠）合井站 → 聖水站（50 分鐘）","自然度鹽麵包","spot"],
+["1600–1900","樂天世界塔","（綠）聖水站 → 蠶室站（20 分鐘）","","spot"],
+["1900–2000","晚餐：奶油燉排骨","","","food"],
+["回飯店","L7 HONGDAE","（綠）蠶室站 → 弘益大學站（46 分鐘）","","hotel"]]},
+{d:"11/28",w:"六",h:"北村、明洞、南山塔",s:"傳統與購物，最後上山看首爾",i:[
+["0900–1000","早餐：Egg Drop 弘大店","步行 6 分鐘","買回飯店吃","food"],
+["1030–1200","午餐：無垢屋（安國總店）","Uber（20 分鐘）","10:30 先抽號碼牌","food"],
+["1030–1200","北村韓屋村","步行 15 分鐘","拍照、喝咖啡","spot"],
+["1300–1500","明洞","Uber（10 分鐘）","購物、美妝、甜點（樂天百貨本店）","spot"],
+["1500–1700","南山首爾塔","搭南山電梯到纜車搭乘處，搭纜車上山","","spot"],
+["晚餐","烤鰻魚","","","food"],
+["回飯店","L7 HONGDAE","（綠）市政廳站 → 弘益大學站（30 分鐘）","","hotel"]]},
+{d:"11/29",w:"日",h:"弘大逛街、返台",s:"悠閒收尾，傍晚搭機場快線",i:[
+["0900–1000","早餐：豚壽百豬肉湯飯","步行 6 分鐘","","food"],
+["1000–1200","弘大逛街","","","spot"],
+["1200–1300","午餐：喉嚨烤肉 弘大入口站店","","","food"],
+["1300–1600","弘大逛街、延南洞","","喝咖啡","spot"],
+["1600–1700","準備去機場","AREX 機場快線：弘大 → 第 2 航廈（約 51 分鐘，4,650 韓元/人）","","move"],
+["2015–2215","仁川機場 → 桃園機場","CI 163　ICN 第 2 航廈 → TPE 第 1 航廈","","move"],
+["抵達後","桃園機場 → 家","集合地點：第 1 航廈入境大廳，21 號門附近","訂單編號：CCF756223","move"]]}
+];
+var tabs=document.getElementById("tabs"),view=document.getElementById("view");
+function esc(s){return s.replace(/[&<>]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;"}[c]})}
+function show(n){
+ var x=D[n];
+ Array.prototype.forEach.call(tabs.children,function(b,j){b.setAttribute("aria-selected",j==n)});
+ var h='<section><h2>Day '+(n+1)+'　'+esc(x.h)+'</h2><p class="sub">'+esc(x.s)+'</p><ol>';
+ x.i.forEach(function(r){var k=K[r[4]];
+  h+='<li style="--c:'+k[0]+'"><div class="card"><div class="time">'+esc(r[0])+'<span class="tag">'+k[1]+'</span></div><p class="t">'+esc(r[1])+'</p>'+
+  (r[2]?'<div class="tr">'+esc(r[2]).replace(/\n/g,'<br>')+'</div>':'')+(r[3]?'<p class="note">'+esc(r[3])+'</p>':'')+'</div></li>'});
+ view.innerHTML=h+'</ol></section>';
+ try{location.hash="d"+(n+1)}catch(e){}
+ window.scrollTo(0,0);
+}
+D.forEach(function(x,n){var b=document.createElement("button");b.setAttribute("role","tab");b.innerHTML='<b>Day '+(n+1)+'</b>'+x.d+'（'+x.w+'）';b.onclick=function(){show(n)};tabs.appendChild(b)});
+function fromHash(){var m=/^#d([1-4])$/.exec(location.hash);show(m?m[1]-1:0)}
+window.addEventListener("hashchange",fromHash);fromHash();
+</script>
+</body>
+</html>
